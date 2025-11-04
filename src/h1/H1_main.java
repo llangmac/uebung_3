@@ -21,7 +21,7 @@ public class H1_main {
         balance = (double) Math.round(balance * 100) / 100;
 
         //Random monthly income from 500 to 10000
-        monInc = (double) RandomGenerator.getDefault().nextInt(500, 10000);
+        monInc = (double) RandomGenerator.getDefault().nextInt(0, 10000);
 
         //Normal bank account
         rating = 0;
@@ -44,18 +44,16 @@ public class H1_main {
             }
             else {
                 rating--;
-                //Warning
-                if(rating < 0) {
-                    warning = true;
-                }
             }
         }
         //Balance == 0
         else {
-
             rating = rating + 2;
         }
-
+        //Warning
+        if(rating < 0) {
+            warning = true;
+        }
     }
 
     //Print Evaluation results
